@@ -5,7 +5,6 @@ import {
     About,
     Cocktail,
     Error,
-    Home,
     Newsletter,
 } from "./pages";
 import "./App.css";
@@ -14,14 +13,11 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout />,
+        errorElement: <Error />,
         children: [
             {
                 path: "cocktail",
                 element: <Cocktail />,
-            },
-            {
-                path: "error",
-                element: <Error />,
             },
             {
                 index: true,
