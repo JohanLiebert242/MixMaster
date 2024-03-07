@@ -149,14 +149,17 @@ ul {
     padding: 0;
 }
 
-.img {
+.img,
+.img-cocktail {
     width: 100%;
+    height: 100%;
     display: block;
     object-fit: cover;
 }
 /* buttons */
 
-.btn {
+.btn,
+.btn-cocktail {
     cursor: pointer;
     color: var(--white);
     background: var(--primary-500);
@@ -285,4 +288,27 @@ PROJECT CSS
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 5rem 2rem;
+}
+
+.btn-cocktail {
+    margin-bottom: 1rem;
+}
+
+.img-cocktail {
+    border-radius: var(--borderRadius);
+}
+
+.form-search {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.form-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+}
+
+.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }

@@ -10,7 +10,6 @@ function CocktailList({ drinks }) {
         );
     }
 
-    console.log(drinks);
 
     const formattedDrinks = drinks.map((item) => {
         const { idDrink, strAlcoholic, strDrink, strDrinkThumb, strGlass } =
