@@ -13,26 +13,30 @@ const singleDrinkUrl =
 const singleCocktailQuery = (id) => {
     return {
         queryKey: ["cocktail", id],
-        queryFn: async() => {
+        queryFn: async () => {
             const { data } = await axios.get(`${singleDrinkUrl}${id}`);
 
-            return data
+            return data.drinks;
         },
     };
 };
 
-export const loader = queryClient => async ({ params }) => {
-    const { id } = params;
+export const loader =
+    (queryClient) =>
+    async ({ params }) => {
+        const { id } = params;
 
-    await queryClient.ensureQueryData(singleCocktailQuery(id));
+        await queryClient.ensureQueryData(singleCocktailQuery(id));
 
-    return { id };
-};
+        return { id };
+    };
 
 function Cocktail() {
-    const { id, drinks } = useLoaderData();
+    const { id} = useLoaderData();
 
-    const {data} = useQuery(singleCocktailQuery(id));
+    const { data: drinks } = useQuery(singleCocktailQuery(id));
+
+    console.log(drinks);
 
     if (!drinks) return <Navigate to="/" />; // id không tồn tại
 
